@@ -34,13 +34,13 @@ def rannumtwo():
 
 
 
-# Saving the score and the name to .csv
+# Saving the score and the name to .csv on a new line
 
 def saveit(score):
   with open('scorecard.csv', 'a', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=' ',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    timewrite = 'Timestamp: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now())
+    timewrite = 'Time: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now())
     spamwriter.writerow([namez] + [score] + [timewrite])
    
 
@@ -52,7 +52,7 @@ print("Welcome " + namez + " would you like to test your computational skills?")
 
 wannaplay = input("Y/N?").lower()
 if wannaplay == "y":
-  print(namez + "Lets Begin.")
+  print(namez + " lets Begin!")
   teststart()
 else:
   print("Please feel free to start when you're ready")
